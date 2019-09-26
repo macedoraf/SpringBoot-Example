@@ -1,9 +1,9 @@
-package br.com.applyer.application.service;
+package br.com.applyer.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import br.com.applyer.application.domain.Usuario;
-import br.com.applyer.application.repository.UsuarioRepository;
+import br.com.applyer.domain.Usuario;
+import br.com.applyer.repository.UsuarioRepository;
 
 /**
  * UsuarioServiceImpl

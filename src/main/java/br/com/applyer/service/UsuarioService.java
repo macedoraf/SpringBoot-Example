@@ -1,6 +1,6 @@
-package br.com.applyer.application.service;
+package br.com.applyer.service;
 
-import br.com.applyer.application.domain.Usuario;
+import br.com.applyer.domain.Usuario;
 
 /**
  * UsuarioService

@@ -1,4 +1,4 @@
-package br.com.applyer.application.domain;
+package br.com.applyer.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

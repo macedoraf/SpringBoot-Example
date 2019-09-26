@@ -1,8 +1,8 @@
-package br.com.applyer.application.repository;
+package br.com.applyer.repository;
 
 import org.springframework.data.repository.CrudRepository;
 
-import br.com.applyer.application.domain.Usuario;
+import br.com.applyer.domain.Usuario;
 
 /**
  * UsuarioRepository

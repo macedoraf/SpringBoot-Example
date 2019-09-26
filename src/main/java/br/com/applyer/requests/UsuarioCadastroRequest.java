@@ -1,4 +1,4 @@
-package br.com.applyer.application.requests;
+package br.com.applyer.requests;
 
 /**
  * UsuarioCadastroRequest
