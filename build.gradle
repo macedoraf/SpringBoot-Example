@@ -22,15 +22,9 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	developmentOnly 'org.springframework.boot:spring-boot-devtools'
-
-	// https://mvnrepository.com/artifact/com.oracle/ojdbc14
-	implementation group: 'com.oracle', name: 'ojdbc14', version: '10.2.0.4.0'
-	implementation group: 'com.oracle', name: 'ora-jdbc', version: '7'
-
-	// https://mvnrepository.com/artifact/org.hibernate/hibernate-gradle-plugin
 	implementation group: 'org.hibernate', name: 'hibernate-gradle-plugin', version: '5.4.5.Final'
-
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	implementation files('lib/ojdbc7.jar')
 
 	
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'

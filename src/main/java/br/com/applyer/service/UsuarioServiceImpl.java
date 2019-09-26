@@ -1,6 +1,7 @@
 package br.com.applyer.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import br.com.applyer.domain.Usuario;
 import br.com.applyer.repository.UsuarioRepository;
@@ -8,6 +9,7 @@ import br.com.applyer.repository.UsuarioRepository;
 /**
  * UsuarioServiceImpl
  */
+@Service
 public class UsuarioServiceImpl implements UsuarioService {
 
     private UsuarioRepository repository;

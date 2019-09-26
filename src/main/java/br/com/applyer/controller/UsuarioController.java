@@ -1,42 +1,57 @@
 package br.com.applyer.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
+import br.com.applyer.controller.reponses.UsuarioResponse;
+import br.com.applyer.controller.requests.UsuarioAutenticaRequest;
+import br.com.applyer.controller.requests.UsuarioCadastroRequest;
 import br.com.applyer.domain.Usuario;
-import br.com.applyer.requests.UsuarioAutenticaRequest;
-import br.com.applyer.requests.UsuarioCadastroRequest;
 import br.com.applyer.service.UsuarioService;
 
 /**
  * UsuarioController
  */
 @Controller
+@RequestMapping("/v1")
 public class UsuarioController {
 
+    @Autowired
     private UsuarioService service;
 
-    @Autowired
-    public void setService(UsuarioService service) {
-        this.service = service;
-    }
 
 
     @PostMapping("cadastro/usuario")
-    public String cadastrarUsuario(@Valid UsuarioCadastroRequest request){
+    @CrossOrigin
+    public ResponseEntity<UsuarioResponse> cadastrarUsuario(@Valid UsuarioCadastroRequest request,BindingResult result){
+        if(result.hasErrors()){
+            List<String> errorList = new ArrayList<>();
+            result.getAllErrors().forEach(objectError -> errorList.add(objectError.getDefaultMessage()));
+        }
         Usuario usuario = new Usuario();
         service.cadastrarUsuario(usuario);
-        return "";
+        return ResponseEntity.ok(new UsuarioResponse());
     }
 
-    public String autenticarUsuario(@Valid UsuarioAutenticaRequest request){
-        String email = "";
-        String senha = "";
-        service.autenticarUsuario(email, senha);
-        return "";
+    @PostMapping("login")
+    @CrossOrigin
+    public ResponseEntity<UsuarioResponse> autenticarUsuario(@Valid UsuarioAutenticaRequest request,BindingResult result){
+        if(result.hasErrors()){
+            List<String> errorList = new ArrayList<>();
+            result.getAllErrors().forEach(objectError -> errorList.add(objectError.getDefaultMessage()));
+        }
+        service.autenticarUsuario(request.getEmail(), request.getPassword());
+        return ResponseEntity.ok(new UsuarioResponse());
     }
 
     
