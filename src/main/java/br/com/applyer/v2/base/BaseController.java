@@ -13,7 +13,7 @@ public abstract class BaseController<Entity> {
 
     @PostMapping
     @CrossOrigin
-    public ResponseEntity<Entity> cadastrar(Entity entity) {
+    public ResponseEntity<Entity> cadastrar(@RequestBody Entity entity) {
         return ResponseEntity.ok(getService().salvar(entity));
 
     }
@@ -27,7 +27,7 @@ public abstract class BaseController<Entity> {
 
     @PutMapping(value = "{id}/")
     @CrossOrigin
-    public void atualizar(@PathVariable(name = "id") long id,Entity entity) {
+    public void atualizar(@PathVariable(name = "id") long id,@RequestBody  Entity entity) {
         ResponseEntity.ok(getService().atualizar(id,entity));
     }
 
