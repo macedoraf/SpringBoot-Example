@@ -1,4 +1,4 @@
-package br.com.applyer.request;
+package br.com.applyer.v2.autenticacao.controller;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;

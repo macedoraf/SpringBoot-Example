@@ -1,10 +1,13 @@
-package br.com.applyer.service;
+package br.com.applyer.v2.autenticacao.service;
 
 
-import br.com.applyer.entity.Usuario;
-import br.com.applyer.repository.UsuarioRepository;
+import br.com.applyer.v2.autenticacao.entity.Usuario;
+import br.com.applyer.v2.autenticacao.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * UsuarioServiceImpl
@@ -20,8 +23,8 @@ public class UsuarioServiceImpl implements UsuarioService {
     }
 
     @Override
-    public void cadastrarUsuario(Usuario usuario) {
-        repository.save(usuario);
+    public Usuario cadastrarUsuario(Usuario usuario) {
+        return repository.save(usuario);
 
     }
 
@@ -51,6 +54,16 @@ public class UsuarioServiceImpl implements UsuarioService {
     public void deleteUsuario(long id) {
         repository.deleteById(id);
 
+    }
+
+    @Override
+    public List<String> listarTodos() {
+        List<String> list = new ArrayList<>();
+        repository.findAll().forEach(it -> {
+                    list.add(it.getEmail());
+                }
+        );
+        return list;
     }
 
 

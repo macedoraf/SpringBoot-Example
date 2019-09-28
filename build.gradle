@@ -22,9 +22,11 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation group: 'org.hibernate', name: 'hibernate-gradle-plugin', version: '5.4.5.Final'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	implementation files('lib/ojdbc7.jar')
+	implementation 'com.zaxxer:HikariCP:3.4.1'
 
 	
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'

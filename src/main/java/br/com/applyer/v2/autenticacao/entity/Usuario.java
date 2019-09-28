@@ -1,25 +1,40 @@
-package br.com.applyer.entity;
+package br.com.applyer.v2.autenticacao.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
-@Table(name = "SYS_TB_USUARIO")
+@Table(name = "SYS_APPLY_TB_USUARIO")
 public class Usuario{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "ID")
+    @Column(name = "USUARIO_ID")
     private Long id;
     @Column(name = "EMAIL")
     private String email;
     @Column(name = "SENHA")
     private String senha;
-    
-/**
+    @Column(name = "NOME")
+    private String nome;
+    @Column(name = "SOBRENOME")
+    private String sobrenome;
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getSobrenome() {
+        return sobrenome;
+    }
+
+    public void setSobrenome(String sobrenome) {
+        this.sobrenome = sobrenome;
+    }
+
+    /**
  * @return the email
  */
 public String getEmail() {
