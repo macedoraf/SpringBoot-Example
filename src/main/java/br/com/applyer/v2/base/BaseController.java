@@ -23,8 +23,8 @@ public abstract class BaseController<Entity> {
 
     }
 
-    @PutMapping
-    public void atualizar(long id,Entity entity) {
+    @PutMapping(value = "{id}/")
+    public void atualizar(@PathVariable(name = "id") long id,Entity entity) {
         ResponseEntity.ok(getService().atualizar(id,entity));
     }
 
