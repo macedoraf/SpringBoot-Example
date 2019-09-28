@@ -1,6 +1,7 @@
 package br.com.applyer.service;
 
-import br.com.applyer.domain.Usuario;
+
+import br.com.applyer.entity.Usuario;
 
 /**
  * UsuarioService

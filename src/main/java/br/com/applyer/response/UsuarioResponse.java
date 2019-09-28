@@ -1,4 +1,4 @@
-package br.com.applyer.controller.reponses;
+package br.com.applyer.response;
 
 /**
  * UsuarioResponse

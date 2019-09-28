@@ -5,6 +5,11 @@ import java.util.List;
 
 import javax.validation.Valid;
 
+import br.com.applyer.entity.Usuario;
+import br.com.applyer.request.UsuarioAutenticaRequest;
+import br.com.applyer.request.UsuarioCadastroRequest;
+import br.com.applyer.response.UsuarioResponse;
+import br.com.applyer.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -13,11 +18,6 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import br.com.applyer.controller.reponses.UsuarioResponse;
-import br.com.applyer.controller.requests.UsuarioAutenticaRequest;
-import br.com.applyer.controller.requests.UsuarioCadastroRequest;
-import br.com.applyer.domain.Usuario;
-import br.com.applyer.service.UsuarioService;
 
 /**
  * UsuarioController
@@ -33,7 +33,7 @@ public class UsuarioController {
 
     @PostMapping("cadastro/usuario")
     @CrossOrigin
-    public ResponseEntity<UsuarioResponse> cadastrarUsuario(@Valid UsuarioCadastroRequest request,BindingResult result){
+    public ResponseEntity<UsuarioResponse> cadastrarUsuario(@Valid UsuarioCadastroRequest request, BindingResult result){
         if(result.hasErrors()){
             List<String> errorList = new ArrayList<>();
             result.getAllErrors().forEach(objectError -> errorList.add(objectError.getDefaultMessage()));
@@ -45,7 +45,7 @@ public class UsuarioController {
 
     @PostMapping("login")
     @CrossOrigin
-    public ResponseEntity<UsuarioResponse> autenticarUsuario(@Valid UsuarioAutenticaRequest request,BindingResult result){
+    public ResponseEntity<UsuarioResponse> autenticarUsuario(@Valid UsuarioAutenticaRequest request, BindingResult result){
         if(result.hasErrors()){
             List<String> errorList = new ArrayList<>();
             result.getAllErrors().forEach(objectError -> errorList.add(objectError.getDefaultMessage()));

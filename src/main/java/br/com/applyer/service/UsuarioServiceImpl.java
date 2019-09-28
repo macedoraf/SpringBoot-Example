@@ -1,10 +1,10 @@
 package br.com.applyer.service;
 
+
+import br.com.applyer.entity.Usuario;
+import br.com.applyer.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import br.com.applyer.domain.Usuario;
-import br.com.applyer.repository.UsuarioRepository;
 
 /**
  * UsuarioServiceImpl
@@ -35,15 +35,14 @@ public class UsuarioServiceImpl implements UsuarioService {
     public Usuario autenticarUsuario(String email, String senha) {
         Usuario novoUsuario = new Usuario();
         repository.findAll().forEach(
-            user -> {
-                if(user.getEmail().equals(email)
-                && user.getSenha().equals(senha))
-                {
-                    novoUsuario.setEmail(email);
-                    novoUsuario.setSenha(senha);
-                    novoUsuario.setId(user.getId());
+                user -> {
+                    if (user.getEmail().equals(email)
+                            && user.getSenha().equals(senha)) {
+                        novoUsuario.setEmail(email);
+                        novoUsuario.setSenha(senha);
+                        novoUsuario.setId(user.getId());
+                    }
                 }
-            }
         );
         return novoUsuario;
     }
@@ -54,5 +53,5 @@ public class UsuarioServiceImpl implements UsuarioService {
 
     }
 
-    
+
 }

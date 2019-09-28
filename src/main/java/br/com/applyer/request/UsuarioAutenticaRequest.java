@@ -1,4 +1,4 @@
-package br.com.applyer.controller.requests;
+package br.com.applyer.request;
 
 /**
  * UsuarioAutenticaRequest

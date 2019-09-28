@@ -1,14 +1,29 @@
-package br.com.applyer.controller.requests;
+package br.com.applyer.request;
+
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 
 /**
  * UsuarioCadastroRequest
  */
 public class UsuarioCadastroRequest {
+    @Min(4) @Max(32)
     private String email;
+    @Min(4) @Max(32)
     private String nome;
+    @Min(4) @Max(32)
     private String sobrenome;
+    @Min(6) @Max(16)
+    private String senha;
 
 
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
 
     public String getEmail() {
         return this.email;
