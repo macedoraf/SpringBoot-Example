@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 
-@CrossOrigin
+
 @Controller
 @RequestMapping("/vaga")
 public class VagaController extends BaseController<Vaga> {
