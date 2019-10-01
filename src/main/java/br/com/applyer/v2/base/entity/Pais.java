@@ -1,15 +1,13 @@
 package br.com.applyer.v2.base.entity;
 
-import javax.persistence.Basic;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * @author Rafael
  */
 @Entity
-public class TB_PAIS {
+@Table(name = "APP_TB_PAIS")
+public class Pais {
 
     @Id
     @GeneratedValue

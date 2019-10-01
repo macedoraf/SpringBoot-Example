@@ -3,21 +3,21 @@ package br.com.applyer.v2.controller;
 
 import br.com.applyer.v2.base.BaseController;
 import br.com.applyer.v2.base.BaseServiceContract;
-import br.com.applyer.v2.base.entity.USUARIO;
-import br.com.applyer.v2.service.JPA_USUARIO_Service;
+import br.com.applyer.v2.base.entity.Usuario;
+import br.com.applyer.v2.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping(name = "v3/usuario")
-public class UsuarioController extends BaseController<USUARIO> {
+public class UsuarioController extends BaseController<Usuario> {
 
     @Autowired
-    private JPA_USUARIO_Service service;
+    private UsuarioService service;
 
     @Override
-    public BaseServiceContract<USUARIO> getService() {
+    public BaseServiceContract<Usuario> getService() {
         return service;
     }
 }

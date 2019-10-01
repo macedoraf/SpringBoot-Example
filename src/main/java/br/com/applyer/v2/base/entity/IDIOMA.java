@@ -1,16 +1,13 @@
 package br.com.applyer.v2.base.entity;
 
-import javax.persistence.Basic;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 /**
  * @author Rafael
  */
 @Entity
-public class IDIOMA {
+@Table(name = "APP_TB_IDIOMA")
+public class Idioma {
 
     @Id
     @GeneratedValue
@@ -26,7 +23,7 @@ public class IDIOMA {
     private String escrita;
 
     @OneToOne
-    private TB_PAIS TB_PAIS;
+    private Pais Pais;
 
     public Long getId() {
         return id;
@@ -60,12 +57,22 @@ public class IDIOMA {
         this.escrita = escrita;
     }
 
-    public TB_PAIS getTB_PAIS() {
-        return TB_PAIS;
+    public Pais getPais() {
+        return Pais;
     }
 
-    public void setTB_PAIS(TB_PAIS TB_PAIS) {
-        this.TB_PAIS = TB_PAIS;
+    public void setPais(Pais pais) {
+        this.Pais = pais;
     }
 
+    @Override
+    public String toString() {
+        return "IDIOMA{" +
+                "id=" + id +
+                ", leitura='" + leitura + '\'' +
+                ", fala='" + fala + '\'' +
+                ", escrita='" + escrita + '\'' +
+                ", TB_PAIS=" + Pais +
+                '}';
+    }
 }

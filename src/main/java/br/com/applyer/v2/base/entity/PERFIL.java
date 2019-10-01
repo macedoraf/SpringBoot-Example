@@ -2,18 +2,14 @@ package br.com.applyer.v2.base.entity;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.persistence.Basic;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 /**
  * @author Rafael
  */
 @Entity
-public class PERFIL {
+@Table(name = "APP_TB_PERFIL")
+public class Perfil {
 
     @Id
     @GeneratedValue
@@ -43,23 +39,23 @@ public class PERFIL {
     @Basic
     private String cidade;
 
-    @OneToOne(mappedBy = "JPA_TB_PERFIL")
-    private USUARIO USUARIO;
+    @OneToOne(mappedBy = "perfil")
+    private Usuario usuario;
 
     @OneToOne
-    private TB_PAIS TB_PAIS;
+    private Pais Pais;
 
     @OneToMany
-    private List<TB_EMPREGO> _TB_EMPREGos;
+    private List<Emprego> Empregos;
 
     @OneToMany
-    private List<TB_FORMACAO> _TB_FORMACAos;
+    private List<Formacao> Formacoes;
 
     @OneToMany
-    private List<IDIOMA> IDIOMAS;
+    private List<Idioma> idiomas;
 
     @OneToMany
-    private List<VAGA_APLC> VAGA_APLCS;
+    private List<VagaAplicacao> vagasAplicadas;
 
     public Long getId() {
         return id;
@@ -133,96 +129,116 @@ public class PERFIL {
         this.cidade = cidade;
     }
 
-    public USUARIO getUSUARIO() {
-        return USUARIO;
+    public Usuario getUsuario() {
+        return usuario;
     }
 
-    public void setUSUARIO(USUARIO USUARIO) {
-        this.USUARIO = USUARIO;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 
-    public TB_PAIS getTB_PAIS() {
-        return TB_PAIS;
+    public Pais getPais() {
+        return Pais;
     }
 
-    public void setTB_PAIS(TB_PAIS TB_PAIS) {
-        this.TB_PAIS = TB_PAIS;
+    public void setPais(Pais pais) {
+        this.Pais = pais;
     }
 
-    public List<TB_EMPREGO> get_TB_EMPREGos() {
-        if (_TB_EMPREGos == null) {
-            _TB_EMPREGos = new ArrayList<>();
+    public List<Emprego> getEmpregos() {
+        if (Empregos == null) {
+            Empregos = new ArrayList<>();
         }
-        return _TB_EMPREGos;
+        return Empregos;
     }
 
-    public void set_TB_EMPREGos(List<TB_EMPREGO> _TB_EMPREGos) {
-        this._TB_EMPREGos = _TB_EMPREGos;
+    public void setEmpregos(List<Emprego> empregos) {
+        this.Empregos = empregos;
     }
 
-    public void addJPA_TB_EMPREGo(TB_EMPREGO _TB_EMPREGo) {
-        get_TB_EMPREGos().add(_TB_EMPREGo);
+    public void addEmprego(Emprego emprego) {
+        getEmpregos().add(emprego);
     }
 
-    public void removeJPA_TB_EMPREGo(TB_EMPREGO _TB_EMPREGo) {
-        get_TB_EMPREGos().remove(_TB_EMPREGo);
+    public void removeEmprego(Emprego emprego) {
+        getEmpregos().remove(emprego);
     }
 
-    public List<TB_FORMACAO> get_TB_FORMACAos() {
-        if (_TB_FORMACAos == null) {
-            _TB_FORMACAos = new ArrayList<>();
+    public List<Formacao> getFormacoes() {
+        if (Formacoes == null) {
+            Formacoes = new ArrayList<>();
         }
-        return _TB_FORMACAos;
+        return Formacoes;
     }
 
-    public void set_TB_FORMACAos(List<TB_FORMACAO> _TB_FORMACAos) {
-        this._TB_FORMACAos = _TB_FORMACAos;
+    public void setFormacoes(List<Formacao> formacoes) {
+        this.Formacoes = formacoes;
     }
 
-    public void addJPA_TB_FORMACAo(TB_FORMACAO _TB_FORMACAo) {
-        get_TB_FORMACAos().add(_TB_FORMACAo);
+    public void addFormacao(Formacao _TB_FORMACAo) {
+        getFormacoes().add(_TB_FORMACAo);
     }
 
-    public void removeJPA_TB_FORMACAo(TB_FORMACAO _TB_FORMACAo) {
-        get_TB_FORMACAos().remove(_TB_FORMACAo);
+    public void removeformacao(Formacao _TB_FORMACAo) {
+        getFormacoes().remove(_TB_FORMACAo);
     }
 
-    public List<IDIOMA> getIDIOMAS() {
-        if (IDIOMAS == null) {
-            IDIOMAS = new ArrayList<>();
+    public List<Idioma> getIdiomas() {
+        if (idiomas == null) {
+            idiomas = new ArrayList<>();
         }
-        return IDIOMAS;
+        return idiomas;
     }
 
-    public void setIDIOMAS(List<IDIOMA> IDIOMAS) {
-        this.IDIOMAS = IDIOMAS;
+    public void setIdiomas(List<Idioma> idiomas) {
+        this.idiomas = idiomas;
     }
 
-    public void addJPA_TB_IDIOMA(IDIOMA IDIOMA) {
-        getIDIOMAS().add(IDIOMA);
+    public void addJPA_TB_IDIOMA(Idioma IDIOMA) {
+        getIdiomas().add(IDIOMA);
     }
 
-    public void removeJPA_TB_IDIOMA(IDIOMA IDIOMA) {
-        getIDIOMAS().remove(IDIOMA);
+    public void removeJPA_TB_IDIOMA(Idioma IDIOMA) {
+        getIdiomas().remove(IDIOMA);
     }
 
-    public List<VAGA_APLC> getVAGA_APLCS() {
-        if (VAGA_APLCS == null) {
-            VAGA_APLCS = new ArrayList<>();
+    public List<VagaAplicacao> getVagasAplicadas() {
+        if (vagasAplicadas == null) {
+            vagasAplicadas = new ArrayList<>();
         }
-        return VAGA_APLCS;
+        return vagasAplicadas;
     }
 
-    public void setVAGA_APLCS(List<VAGA_APLC> VAGA_APLCS) {
-        this.VAGA_APLCS = VAGA_APLCS;
+    public void setVagasAplicadas(List<VagaAplicacao> vagasAplicadas) {
+        this.vagasAplicadas = vagasAplicadas;
     }
 
-    public void addJPA_TB_VAGA_APLC(VAGA_APLC VAGA_APLC) {
-        getVAGA_APLCS().add(VAGA_APLC);
+    public void addVagaApp(VagaAplicacao VagaAplicacao) {
+        getVagasAplicadas().add(VagaAplicacao);
     }
 
-    public void removeJPA_TB_VAGA_APLC(VAGA_APLC VAGA_APLC) {
-        getVAGA_APLCS().remove(VAGA_APLC);
+    public void removeVagaApp(VagaAplicacao VagaAplicacao) {
+        getVagasAplicadas().remove(VagaAplicacao);
     }
 
+    @Override
+    public String toString() {
+        return "PERFIL{" +
+                "id=" + id +
+                ", nomeBayer='" + nomeBayer + '\'' +
+                ", celular='" + celular + '\'' +
+                ", empresaAtual='" + empresaAtual + '\'' +
+                ", tituloEmpregoAtual='" + tituloEmpregoAtual + '\'' +
+                ", telResidencial='" + telResidencial + '\'' +
+                ", endereco='" + endereco + '\'' +
+                ", cep='" + cep + '\'' +
+                ", cidade='" + cidade + '\'' +
+                ", USUARIO=" + usuario +
+                ", TB_PAIS=" + Pais +
+                ", _TB_EMPREGos=" + Empregos +
+                ", _TB_FORMACAos=" + Formacoes +
+                ", IDIOMAS=" + idiomas +
+                ", VAGA_APLCS=" + vagasAplicadas +
+                '}';
+    }
 }

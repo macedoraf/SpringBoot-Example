@@ -2,18 +2,18 @@ package br.com.applyer.v2.controller;
 
 import br.com.applyer.v2.base.BaseController;
 import br.com.applyer.v2.base.BaseServiceContract;
-import br.com.applyer.v2.base.entity.VAGA;
-import br.com.applyer.v2.service.JPA_VAGA_Service;
+import br.com.applyer.v2.base.entity.Vaga;
+import br.com.applyer.v2.service.VagaService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("v3/vaga")
-public class VagaController extends BaseController<VAGA> {
-    private JPA_VAGA_Service service;
+public class VagaController extends BaseController<Vaga> {
+    private VagaService service;
 
     @Override
-    public BaseServiceContract<VAGA> getService() {
+    public BaseServiceContract<Vaga> getService() {
         return service;
     }
 }

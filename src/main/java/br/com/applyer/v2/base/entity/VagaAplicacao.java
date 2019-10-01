@@ -1,16 +1,13 @@
 package br.com.applyer.v2.base.entity;
 
-import javax.persistence.Basic;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 /**
  * @author Rafael
  */
 @Entity
-public class VAGA_APLC {
+@Table(name = "APP_TB_VAGA_APP")
+public class VagaAplicacao {
 
     @Id
     @GeneratedValue
@@ -20,7 +17,7 @@ public class VAGA_APLC {
     private String status;
 
     @OneToOne
-    private VAGA VAGA;
+    private Vaga VAGA;
 
     public Long getId() {
         return id;
@@ -38,11 +35,11 @@ public class VAGA_APLC {
         this.status = status;
     }
 
-    public VAGA getVAGA() {
+    public Vaga getVAGA() {
         return VAGA;
     }
 
-    public void setVAGA(VAGA VAGA) {
+    public void setVAGA(Vaga VAGA) {
         this.VAGA = VAGA;
     }
 

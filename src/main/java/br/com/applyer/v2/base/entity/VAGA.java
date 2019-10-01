@@ -2,17 +2,14 @@ package br.com.applyer.v2.base.entity;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.persistence.Basic;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 
 /**
  * @author Rafael
  */
 @Entity
-public class VAGA {
+@Table(name = "APP_TB_VAGA")
+public class Vaga {
 
     @Id
     @GeneratedValue
@@ -28,7 +25,7 @@ public class VAGA {
     private String descricao;
 
     @OneToMany
-    private List<REQ> REQS;
+    private List<Req> Reqs;
 
     public Long getId() {
         return id;
@@ -62,23 +59,23 @@ public class VAGA {
         this.descricao = descricao;
     }
 
-    public List<REQ> getREQS() {
-        if (REQS == null) {
-            REQS = new ArrayList<>();
+    public List<Req> getReqs() {
+        if (Reqs == null) {
+            Reqs = new ArrayList<>();
         }
-        return REQS;
+        return Reqs;
     }
 
-    public void setREQS(List<REQ> REQS) {
-        this.REQS = REQS;
+    public void setReqs(List<Req> reqs) {
+        this.Reqs = reqs;
     }
 
-    public void addTB_JPA_REQ(REQ REQ) {
-        getREQS().add(REQ);
+    public void addTB_JPA_REQ(Req REQ) {
+        getReqs().add(REQ);
     }
 
-    public void removeTB_JPA_REQ(REQ REQ) {
-        getREQS().remove(REQ);
+    public void removeTB_JPA_REQ(Req REQ) {
+        getReqs().remove(REQ);
     }
 
 }

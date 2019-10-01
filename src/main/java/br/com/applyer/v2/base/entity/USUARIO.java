@@ -1,16 +1,13 @@
 package br.com.applyer.v2.base.entity;
 
-import javax.persistence.Basic;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 /**
  * @author Rafael
  */
 @Entity
-public class USUARIO {
+@Table(name = "APP_TB_USUARIO")
+public class Usuario {
 
     @Id
     @GeneratedValue
@@ -29,7 +26,7 @@ public class USUARIO {
     private String sobrenome;
 
     @OneToOne
-    private PERFIL JPA_TB_PERFIL;
+    private Perfil perfil;
 
     public Long getId() {
         return id;
@@ -71,12 +68,23 @@ public class USUARIO {
         this.sobrenome = sobrenome;
     }
 
-    public PERFIL getJPA_TB_PERFIL() {
-        return JPA_TB_PERFIL;
+    public Perfil getPerfil() {
+        return perfil;
     }
 
-    public void setJPA_TB_PERFIL(PERFIL JPA_TB_PERFIL) {
-        this.JPA_TB_PERFIL = JPA_TB_PERFIL;
+    public void setPerfil(Perfil perfil) {
+        this.perfil = perfil;
     }
 
+    @Override
+    public String toString() {
+        return "USUARIO{" +
+                "id=" + id +
+                ", email='" + email + '\'' +
+                ", senha='" + senha + '\'' +
+                ", nome='" + nome + '\'' +
+                ", sobrenome='" + sobrenome + '\'' +
+                ", JPA_TB_PERFIL=" + perfil +
+                '}';
+    }
 }
