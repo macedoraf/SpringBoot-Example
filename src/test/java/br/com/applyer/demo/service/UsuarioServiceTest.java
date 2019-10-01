@@ -1,4 +1,4 @@
-package br.com.applyer.demo;
+package br.com.applyer.demo.service;
 
 import br.com.applyer.v2.base.entity.Perfil;
 import br.com.applyer.v2.base.entity.Usuario;
