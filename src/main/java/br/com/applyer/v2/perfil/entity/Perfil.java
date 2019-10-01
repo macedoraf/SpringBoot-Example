@@ -15,7 +15,7 @@ public class Perfil {
     @Column(name = "PERFIL_ID")
     private long id;
 
-    @OneToOne(cascade = CascadeType.DETACH)
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "USUARIO_ID")
     private Usuario usuario;
 
@@ -45,6 +45,36 @@ public class Perfil {
     private String celular;
     private String cep;
     private String cidade;
+
+    public Perfil() {
+    }
+
+    public Perfil(long id, Usuario usuario, List<Emprego> empregos,
+                  List<Formacao> formacoes, List<Idioma> idiomas,
+                  String tratamento, String tituloAcademico,
+                  String nomeBayer, String tituloEmpregoAtual,
+                  String telefoneResidencial, String pais,
+                  String prestadorDeServico, String endereco,
+                  String estado, String idiomaPref, String celular, String cep, String cidade) {
+        this.id = id;
+        this.usuario = usuario;
+        this.empregos = empregos;
+        this.formacoes = formacoes;
+        this.idiomas = idiomas;
+        this.tratamento = tratamento;
+        this.tituloAcademico = tituloAcademico;
+        this.nomeBayer = nomeBayer;
+        this.tituloEmpregoAtual = tituloEmpregoAtual;
+        this.telefoneResidencial = telefoneResidencial;
+        this.pais = pais;
+        this.prestadorDeServico = prestadorDeServico;
+        this.endereco = endereco;
+        this.estado = estado;
+        this.idiomaPref = idiomaPref;
+        this.celular = celular;
+        this.cep = cep;
+        this.cidade = cidade;
+    }
 
     public List<Emprego> getEmpregos() {
         return empregos;

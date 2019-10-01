@@ -6,7 +6,7 @@ import javax.persistence.*;
 @Table(name = "SYS_APPLY_TB_REQ")
 public class Requisito {
 
-    @Id
+    @Id()
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "REQ_ID")
     private long id;

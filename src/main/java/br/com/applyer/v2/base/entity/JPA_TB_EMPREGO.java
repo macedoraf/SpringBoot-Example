@@ -1,43 +1,47 @@
-package br.com.applyer.v2.perfil.entity;
+package br.com.applyer.v2.base.entity;
 
-import javax.persistence.*;
+import javax.persistence.Basic;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
+/**
+ * @author Rafael
+ */
 @Entity
-@Table(name = "SYS_APPLY_TB_EMPRE")
-public class Emprego {
+public class JPA_TB_EMPREGO {
+
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    @Column(name = "EMPREGO_ID")
-    private long id;
+    @GeneratedValue
+    private Long id;
+
+    @Basic
     private String dataInicio;
+
+    @Basic
     private String dataTermino;
+
+    @Basic
     private String nomeEmpresa;
+
+    @Basic
     private String cargo;
-    private String tipoNegocio;
+
+    @Basic
     private String areaFuncional;
+
+    @Basic
     private String responsabilidades;
-    private String pais;
 
-    public Emprego() {
-    }
+    @OneToOne
+    private JPA_TB_PAIS JPA_TB_PAIS;
 
-    public Emprego(long id, String dataInicio, String dataTermino, String nomeEmpresa, String cargo, String tipoNegocio, String areaFuncional, String responsabilidades, String pais) {
-        this.id = id;
-        this.dataInicio = dataInicio;
-        this.dataTermino = dataTermino;
-        this.nomeEmpresa = nomeEmpresa;
-        this.cargo = cargo;
-        this.tipoNegocio = tipoNegocio;
-        this.areaFuncional = areaFuncional;
-        this.responsabilidades = responsabilidades;
-        this.pais = pais;
-    }
-
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -73,14 +77,6 @@ public class Emprego {
         this.cargo = cargo;
     }
 
-    public String getTipoNegocio() {
-        return tipoNegocio;
-    }
-
-    public void setTipoNegocio(String tipoNegocio) {
-        this.tipoNegocio = tipoNegocio;
-    }
-
     public String getAreaFuncional() {
         return areaFuncional;
     }
@@ -97,11 +93,12 @@ public class Emprego {
         this.responsabilidades = responsabilidades;
     }
 
-    public String getPais() {
-        return pais;
+    public JPA_TB_PAIS getJPA_TB_PAIS() {
+        return JPA_TB_PAIS;
     }
 
-    public void setPais(String pais) {
-        this.pais = pais;
+    public void setJPA_TB_PAIS(JPA_TB_PAIS JPA_TB_PAIS) {
+        this.JPA_TB_PAIS = JPA_TB_PAIS;
     }
+
 }

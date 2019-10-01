@@ -18,6 +18,17 @@ public class Usuario{
     @Column(name = "SOBRENOME")
     private String sobrenome;
 
+    public Usuario(Long id, String email, String senha, String nome, String sobrenome) {
+        this.id = id;
+        this.email = email;
+        this.senha = senha;
+        this.nome = nome;
+        this.sobrenome = sobrenome;
+    }
+
+    public Usuario() {
+    }
+
     public String getNome() {
         return nome;
     }

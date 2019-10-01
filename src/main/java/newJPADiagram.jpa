@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jpa:entity-mappings ptype="MONOLITH" ppkg="br.com.applyer.v2.autenticacao.repository" epkg="domain" v="5.3" rws="_15698961738562" Pws="_15698961738562" cws="_15698961738562" persistenceUnitName="DEFAULT_PU" sm="false" xs="false" id="_15698961738561" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <jpa:entity compositePrimaryKeyClass="JPA_TB_USUARIOPK" abs="false" class="JPA_TB_USUARIO" pclass="Entity_1" v="true" xre="false" m="false" rootElement="_15698961738561" id="_15698961927783">
+        <jpa:ath>Rafael</jpa:ath>
+        <jpa:removedAttributes>
+            <jpa:i>JPA_TB_PERFIL</jpa:i>
+        </jpa:removedAttributes>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="email" pname="attribute" id="_15698962243266">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="senha" pname="attribute" id="_15698962324287">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="nome" pname="attribute" id="_15698962623808"/>
+            <jpa:basic attribute-type="String" v="true" name="sobrenome" pname="attribute" id="_15698962668449"/>
+            <jpa:one-to-one own="true" primaryKey="false" connected-entity-id="_156989627647210" connected-attribute-id="_156989787844531" v="true" name="JPA_TB_PERFIL" id="_156989787844330"/>
+            <jpa:id attribute-type="Long" v="true" xvt="" name="id" id="_15698961928114">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:generated-value strategy="DEFAULT"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="JPA_TB_USUARIO.findAll">
+            <jpa:query>Select e from JPA_TB_USUARIO e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="JPA_TB_USUARIO.findByEmail">
+            <jpa:query>Select j from JPA_TB_USUARIO j where j.email=:email</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="JPA_TB_USUARIO.findBySenha">
+            <jpa:query>Select j from JPA_TB_USUARIO j where j.senha=:senha</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="JPA_TB_USUARIO.findByNome">
+            <jpa:query>Select j from JPA_TB_USUARIO j where j.nome=:nome</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="JPA_TB_USUARIO.findBySobrenome">
+            <jpa:query>Select j from JPA_TB_USUARIO j where j.sobrenome=:sobrenome</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="JPA_TB_PERFILPK" abs="false" class="JPA_TB_PERFIL" pclass="Entity_1" v="true" xre="false" m="false" rootElement="_15698961738561" id="_156989627647210">
+        <jpa:ath>Rafael</jpa:ath>
+        <jpa:removedAttributes>
+            <jpa:i>attribute9</jpa:i>
+            <jpa:i>attribute8</jpa:i>
+            <jpa:i>JPA_TB_USUARIO</jpa:i>
+        </jpa:removedAttributes>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="nomeBayer" pname="attribute" id="_156989628886013">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="celular" pname="attribute1" id="_156989628986114">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="empresaAtual" pname="attribute2" id="_156989629003715">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="tituloEmpregoAtual" pname="attribute3" id="_156989629038016">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="telResidencial" pname="attribute4" id="_156989629055717">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="endereco" pname="attribute5" id="_156989629074018">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="cep" pname="attribute6" id="_156989629090019">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="cidade" pname="attribute7" id="_156989629109320">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:one-to-one primaryKey="false" connected-entity-id="_15698961927783" connected-attribute-id="_156989787844330" v="true" name="JPA_TB_USUARIO" id="_156989787844531"/>
+            <jpa:id attribute-type="Long" v="true" name="id" id="_156989627647311">
+                <jpa:generated-value strategy="DEFAULT"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="JPA_TB_PERFIL.findAll">
+            <jpa:query>Select e from JPA_TB_PERFIL e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="JPA_TB_PERFIL.findByNomeBayer">
+            <jpa:query>Select j from JPA_TB_PERFIL j where j.nomeBayer=:nomeBayer</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="JPA_TB_PERFIL.findByCelular">
+            <jpa:query>Select j from JPA_TB_PERFIL j where j.celular=:celular</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="JPA_TB_PERFIL.findByEmpresaAtual">
+            <jpa:query>Select j from JPA_TB_PERFIL j where j.empresaAtual=:empresaAtual</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="JPA_TB_PERFIL.findByTituloEmpregoAtual">
+            <jpa:query>Select j from JPA_TB_PERFIL j where j.tituloEmpregoAtual=:tituloEmpregoAtual</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="JPA_TB_PERFIL.findByTelResidencial">
+            <jpa:query>Select j from JPA_TB_PERFIL j where j.telResidencial=:telResidencial</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="JPA_TB_PERFIL.findByEndereco">
+            <jpa:query>Select j from JPA_TB_PERFIL j where j.endereco=:endereco</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="JPA_TB_PERFIL.findByCep">
+            <jpa:query>Select j from JPA_TB_PERFIL j where j.cep=:cep</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="JPA_TB_PERFIL.findByCidade">
+            <jpa:query>Select j from JPA_TB_PERFIL j where j.cidade=:cidade</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="JPA_TB_PERFIL.findByAttribute8">
+            <jpa:query>Select j from JPA_TB_PERFIL j where j.attribute8=:attribute8</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="JPA_TB_PERFIL.findByAttribute9">
+            <jpa:query>Select j from JPA_TB_PERFIL j where j.attribute9=:attribute9</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:c/>
+    <jpa:wsl>
+        <jpa:ws n="Main" id="_15698961738562">
+            <i ref="_156989627647210" x="587" y="31"/>
+            <i ref="_15698961927783" x="236" y="115"/>
+        </jpa:ws>
+    </jpa:wsl>
+</jpa:entity-mappings>
