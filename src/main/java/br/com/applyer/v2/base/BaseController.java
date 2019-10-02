@@ -18,24 +18,19 @@ public abstract class BaseController<Entity> {
 
     }
 
-    @DeleteMapping(value = "{id}/")
+    @DeleteMapping(value = "/{id}")
     @CrossOrigin
     public void deletar(@PathVariable(name = "id") long id) {
         ResponseEntity.ok(getService().deletar(id));
 
     }
 
-    @PutMapping(value = "{id}/")
-    @CrossOrigin
-    public void atualizar(@PathVariable(name = "id") long id,@RequestBody  Entity entity) {
-        ResponseEntity.ok(getService().atualizar(id,entity));
-    }
 
-    @GetMapping(value = "{id}/")
+    @GetMapping(value = "/{id}")
     @CrossOrigin
     public ResponseEntity<Entity> buscar(@PathVariable(name = "id") long id) {
         Optional<Entity> entity = getService().buscaPeloId(id);
-        if(entity.isPresent()){
+        if (entity.isPresent()) {
             return ResponseEntity.ok(entity.get());
         }
         return ResponseEntity.of(entity);

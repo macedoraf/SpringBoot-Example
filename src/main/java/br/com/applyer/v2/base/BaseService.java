@@ -2,6 +2,7 @@ package br.com.applyer.v2.base;
 
 import org.springframework.data.repository.CrudRepository;
 
+import javax.persistence.EntityNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -17,11 +18,13 @@ public abstract class BaseService<Entity> implements BaseServiceContract<Entity>
 
     @Override
     public Entity atualizar(long id, Entity entity) {
-        if(getRepository().findById(id)
-                .isPresent()){
-            deletar(id);
+        if(getRepository().existsById(id)){
+            return salvar(entity);
         }
-        return salvar(entity);
+
+        throw new EntityNotFoundException();
+
+
 
     }
 
