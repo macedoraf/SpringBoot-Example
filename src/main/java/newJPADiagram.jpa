@@ -1,148 +1,164 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <jpa:entity-mappings ptype="MONOLITH" ppkg="br.com.applyer.v2.autenticacao.repository" epkg="domain" v="5.3" rws="_15698961738562" Pws="_15698961738562" cws="_15698961738562" persistenceUnitName="DEFAULT_PU" sm="false" xs="false" id="_15698961738561" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <jpa:entity compositePrimaryKeyClass="TB_EMPREGOPK" abs="false" class="TB_EMPREGO" v="true" xre="false" m="false" rootElement="_15698961738561" id="_1569902362918265">
+    <jpa:entity compositePrimaryKeyClass="PaisPK" abs="false" class="Pais" v="true" xre="false" m="false" rootElement="_15698961738561" id="_1569973661431748">
         <jpa:attributes>
-            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="dataInicio" jbt="false" id="_1569902363054267"/>
-            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="dataTermino" jbt="false" id="_1569902363160268"/>
-            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="nomeEmpresa" jbt="false" id="_1569902363262269"/>
-            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="cargo" jbt="false" id="_1569902363362270"/>
-            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="areaFuncional" jbt="false" id="_1569902363462271"/>
-            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="responsabilidades" jbt="false" id="_1569902363562272"/>
-            <jpa:one-to-one own="true" primaryKey="false" connected-entity-id="_1569902370884332" v="true" am="PRIVATE" name="Pais" jbt="false" id="_1569902363663273">
+            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="pais" jbt="false" id="_1569973662674769"/>
+            <jpa:id attribute-type="Long" v="true" am="PRIVATE" name="id" jbt="false" id="_1569973661432749">
+                <jpa:generated-value strategy="DEFAULT"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="APP_TB_PAIS"/>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="ReqPK" abs="false" class="Req" v="true" xre="false" m="false" rootElement="_15698961738561" id="_1569973661445750">
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="descricao" jbt="false" id="_1569973509003230"/>
+            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="nivel" jbt="false" id="_1569973509157231"/>
+            <jpa:id attribute-type="Long" v="true" am="PRIVATE" name="id" jbt="false" id="_1569973661447751">
+                <jpa:generated-value strategy="DEFAULT"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="APP_TB_REQUISITO"/>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="FormacaoPK" abs="false" class="Formacao" v="true" xre="false" m="false" rootElement="_15698961738561" id="_1569973661546760">
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="dataInicio" jbt="false" id="_1569973663357773"/>
+            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="dataFim" jbt="false" id="_1569973600423529"/>
+            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="nomeInstituicao" jbt="false" id="_1569973600568530"/>
+            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="media" jbt="false" id="_1569973600714531"/>
+            <jpa:basic attribute-type="br.com.applyer.v2.base.entity.Pais" v="true" am="PRIVATE" name="pais" jbt="false" id="_1569973600860533"/>
+            <jpa:one-to-one own="true" primaryKey="false" connected-entity-id="_1569973661431748" v="true" am="PRIVATE" name="Pais" jbt="false" id="_1569973600860532">
                 <jpa:cascade/>
             </jpa:one-to-one>
-            <jpa:id attribute-type="Long" v="true" am="PRIVATE" name="id" jbt="false" id="_1569902362918266">
+            <jpa:id attribute-type="Long" v="true" am="PRIVATE" name="id" jbt="false" id="_1569973661546761">
                 <jpa:generated-value strategy="DEFAULT"/>
             </jpa:id>
         </jpa:attributes>
+        <jpa:table name="APP_TB_FORMACAO"/>
     </jpa:entity>
-    <jpa:entity compositePrimaryKeyClass="REQPK" abs="false" class="REQ" v="true" xre="false" m="false" rootElement="_15698961738561" id="_1569902359261237">
+    <jpa:entity compositePrimaryKeyClass="EmpregoPK" abs="false" class="Emprego" v="true" xre="false" m="false" rootElement="_15698961738561" id="_1569973661456752">
         <jpa:attributes>
-            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="descricao" jbt="false" id="_1569902359426239"/>
-            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="nivel" jbt="false" id="_1569902359529240"/>
-            <jpa:id attribute-type="Long" v="true" am="PRIVATE" name="id" jbt="false" id="_1569902359261238">
-                <jpa:generated-value strategy="DEFAULT"/>
-            </jpa:id>
-        </jpa:attributes>
-    </jpa:entity>
-    <jpa:entity compositePrimaryKeyClass="IDIOMAPK" abs="false" class="IDIOMA" v="true" xre="false" m="false" rootElement="_15698961738561" id="_1569902346598172">
-        <jpa:attributes>
-            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="leitura" jbt="false" id="_1569902346752174"/>
-            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="fala" jbt="false" id="_1569902346854175"/>
-            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="escrita" jbt="false" id="_1569902346957176"/>
-            <jpa:one-to-one own="true" primaryKey="false" connected-entity-id="_1569902370884332" v="true" am="PRIVATE" name="Pais" jbt="false" id="_1569902347054177">
+            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="dataInicio" jbt="false" id="_1569973662046767"/>
+            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="dataTermino" jbt="false" id="_1569973663015772"/>
+            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="nomeEmpresa" jbt="false" id="_1569973596623492"/>
+            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="cargo" jbt="false" id="_1569973596772493"/>
+            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="areaFuncional" jbt="false" id="_1569973596927494"/>
+            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="responsabilidades" jbt="false" id="_1569973597072495"/>
+            <jpa:basic attribute-type="br.com.applyer.v2.base.entity.Pais" v="true" am="PRIVATE" name="pais" jbt="false" id="_1569973597218497"/>
+            <jpa:one-to-one own="true" primaryKey="false" connected-entity-id="_1569973661431748" v="true" am="PRIVATE" name="Pais" jbt="false" id="_1569973597218496">
                 <jpa:cascade/>
             </jpa:one-to-one>
-            <jpa:id attribute-type="Long" v="true" am="PRIVATE" name="id" jbt="false" id="_1569902346598173">
+            <jpa:id attribute-type="Long" v="true" am="PRIVATE" name="id" jbt="false" id="_1569973661457753">
                 <jpa:generated-value strategy="DEFAULT"/>
             </jpa:id>
         </jpa:attributes>
+        <jpa:table name="APP_TB_EMPREGO"/>
     </jpa:entity>
-    <jpa:entity compositePrimaryKeyClass="VAGA_APLCPK" abs="false" class="VagaAplicacao" v="true" xre="false" m="false" rootElement="_15698961738561" id="_1569902380625429">
+    <jpa:entity compositePrimaryKeyClass="VagaPK" abs="false" class="Vaga" v="true" xre="false" m="false" rootElement="_15698961738561" id="_1569973661503756">
         <jpa:attributes>
-            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="status" jbt="false" id="_1569902380766431"/>
-            <jpa:one-to-one own="true" primaryKey="false" connected-entity-id="_1569902377108395" v="true" am="PRIVATE" name="VAGA" jbt="false" id="_1569902380867432">
-                <jpa:cascade/>
-            </jpa:one-to-one>
-            <jpa:id attribute-type="Long" v="true" am="PRIVATE" name="id" jbt="false" id="_1569902380625430">
-                <jpa:generated-value strategy="DEFAULT"/>
-            </jpa:id>
-        </jpa:attributes>
-    </jpa:entity>
-    <jpa:entity compositePrimaryKeyClass="PERFILPK" abs="false" class="PERFIL" v="true" xre="false" m="false" rootElement="_15698961738561" id="_1569902352959197">
-        <jpa:removedAttributes>
-            <jpa:i>USUARIO</jpa:i>
-        </jpa:removedAttributes>
-        <jpa:attributes>
-            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="nomeBayer" jbt="false" id="_1569902353118199"/>
-            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="celular" jbt="false" id="_1569902353226200"/>
-            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="empresaAtual" jbt="false" id="_1569902353332201"/>
-            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="tituloEmpregoAtual" jbt="false" id="_1569902353429202"/>
-            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="telResidencial" jbt="false" id="_1569902353525203"/>
-            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="endereco" jbt="false" id="_1569902353623204"/>
-            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="cep" jbt="false" id="_1569902353720205"/>
-            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="cidade" jbt="false" id="_1569902353827206"/>
-            <jpa:one-to-many own="true" collection-type="java.util.List" connected-entity-id="_1569902362918265" v="true" am="PRIVATE" name="_TB_EMPREGos" jbt="false" id="_1569902353928209">
+            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="cargo" jbt="false" id="_1569973498909153"/>
+            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="areaSegmento" jbt="false" id="_1569973499058154"/>
+            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="descricao" jbt="false" id="_1569973499204155"/>
+            <jpa:basic attribute-type="java.util.List" v="true" am="PRIVATE" name="reqs" jbt="false" id="_1569973499562157"/>
+            <jpa:one-to-many own="true" collection-type="java.util.List" connected-entity-id="_1569973661445750" v="true" am="PRIVATE" name="Reqs" jbt="false" id="_1569973499352156">
                 <jpa:cascade/>
             </jpa:one-to-many>
-            <jpa:one-to-many own="true" collection-type="java.util.List" connected-entity-id="_1569902366948299" v="true" am="PRIVATE" name="_TB_FORMACAos" jbt="false" id="_1569902354131210">
-                <jpa:cascade/>
-            </jpa:one-to-many>
-            <jpa:one-to-many own="true" collection-type="java.util.List" connected-entity-id="_1569902346598172" v="true" am="PRIVATE" name="IDIOMAS" jbt="false" id="_1569902354339211">
-                <jpa:cascade/>
-            </jpa:one-to-many>
-            <jpa:one-to-many own="true" collection-type="java.util.List" connected-entity-id="_1569902380625429" v="true" am="PRIVATE" name="VAGA_APLCS" jbt="false" id="_1569902354534212">
-                <jpa:cascade/>
-            </jpa:one-to-many>
-            <jpa:one-to-one own="true" primaryKey="false" connected-entity-id="_1569902370884332" v="true" am="PRIVATE" name="Pais" jbt="false" id="_1569902353928208">
+            <jpa:id attribute-type="Long" v="true" am="PRIVATE" name="id" jbt="false" id="_1569973661503757">
+                <jpa:generated-value strategy="DEFAULT"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="APP_TB_VAGA"/>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="IdiomaPK" abs="false" class="Idioma" v="true" xre="false" m="false" rootElement="_15698961738561" id="_1569973661560762">
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="leitura" jbt="false" id="_1569973662632768"/>
+            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="fala" jbt="false" id="_1569973663577775"/>
+            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="escrita" jbt="false" id="_1569973522459336"/>
+            <jpa:basic attribute-type="br.com.applyer.v2.base.entity.Pais" v="true" am="PRIVATE" name="pais" jbt="false" id="_1569973522612338"/>
+            <jpa:one-to-one own="true" primaryKey="false" connected-entity-id="_1569973661431748" v="true" am="PRIVATE" name="Pais" jbt="false" id="_1569973522612337">
                 <jpa:cascade/>
             </jpa:one-to-one>
-            <jpa:id attribute-type="Long" v="true" am="PRIVATE" name="id" jbt="false" id="_1569902352960198">
+            <jpa:id attribute-type="Long" v="true" am="PRIVATE" name="id" jbt="false" id="_1569973661561763">
                 <jpa:generated-value strategy="DEFAULT"/>
             </jpa:id>
         </jpa:attributes>
+        <jpa:table name="APP_TB_IDIOMA"/>
     </jpa:entity>
-    <jpa:entity compositePrimaryKeyClass="USUARIOPK" abs="false" class="USUARIO" v="true" xre="false" m="false" rootElement="_15698961738561" id="_1569902373761361">
+    <jpa:entity compositePrimaryKeyClass="VagaAplicacaoPK" abs="false" class="VagaAplicacao" v="true" xre="false" m="false" rootElement="_15698961738561" id="_1569973661530758">
         <jpa:attributes>
-            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="email" jbt="false" id="_1569902373925363"/>
-            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="senha" jbt="false" id="_1569902374038364"/>
-            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="nome" jbt="false" id="_1569902374142365"/>
-            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="sobrenome" jbt="false" id="_1569902374238366"/>
-            <jpa:one-to-one own="true" primaryKey="false" connected-entity-id="_1569902352959197" v="true" am="PRIVATE" name="JPA_TB_Perfil" jbt="false" id="_1569902374335367">
+            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="status" jbt="false" id="_1569973663400774"/>
+            <jpa:one-to-one own="true" primaryKey="false" connected-entity-id="_1569973661503756" v="true" am="PRIVATE" name="VAGA" jbt="false" id="_1569973493515133">
                 <jpa:cascade/>
             </jpa:one-to-one>
-            <jpa:id attribute-type="Long" v="true" am="PRIVATE" name="id" jbt="false" id="_1569902373761362">
+            <jpa:id attribute-type="Long" v="true" am="PRIVATE" name="id" jbt="false" id="_1569973661530759">
                 <jpa:generated-value strategy="DEFAULT"/>
             </jpa:id>
         </jpa:attributes>
+        <jpa:table name="APP_TB_VAGA_APP"/>
     </jpa:entity>
-    <jpa:entity compositePrimaryKeyClass="TB_FORMACAOPK" abs="false" class="TB_FORMACAO" v="true" xre="false" m="false" rootElement="_15698961738561" id="_1569902366948299">
+    <jpa:entity compositePrimaryKeyClass="UsuarioPK" abs="false" class="Usuario" v="true" xre="false" m="false" rootElement="_15698961738561" id="_1569973661479754">
         <jpa:attributes>
-            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="dataInicio" jbt="false" id="_1569902367098301"/>
-            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="dataFim" jbt="false" id="_1569902367206302"/>
-            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="nomeInstituicao" jbt="false" id="_1569902367321303"/>
-            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="media" jbt="false" id="_1569902367417304"/>
-            <jpa:one-to-one own="true" primaryKey="false" connected-entity-id="_1569902370884332" v="true" am="PRIVATE" name="Pais" jbt="false" id="_1569902367515305">
+            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="email" jbt="false" id="_1569973662002766"/>
+            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="senha" jbt="false" id="_1569973662974771"/>
+            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="nome" jbt="false" id="_1569973644142697"/>
+            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="sobrenome" jbt="false" id="_1569973644288698"/>
+            <jpa:one-to-one own="true" primaryKey="false" connected-entity-id="_1569973661583764" connected-attribute-id="_1569973645776710" v="true" am="PRIVATE" name="perfil" jbt="false" id="_1569973644436699">
                 <jpa:cascade/>
             </jpa:one-to-one>
-            <jpa:id attribute-type="Long" v="true" am="PRIVATE" name="id" jbt="false" id="_1569902366948300">
+            <jpa:id attribute-type="Long" v="true" am="PRIVATE" name="id" jbt="false" id="_1569973661479755">
                 <jpa:generated-value strategy="DEFAULT"/>
             </jpa:id>
         </jpa:attributes>
+        <jpa:table name="APP_TB_USUARIO"/>
     </jpa:entity>
-    <jpa:entity compositePrimaryKeyClass="TB_PAISPK" abs="false" class="Pais" v="true" xre="false" m="false" rootElement="_15698961738561" id="_1569902370884332">
+    <jpa:entity compositePrimaryKeyClass="PerfilPK" abs="false" class="Perfil" v="true" xre="false" m="false" rootElement="_15698961738561" id="_1569973661583764">
         <jpa:attributes>
-            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="pais" jbt="false" id="_1569902371041334"/>
-            <jpa:id attribute-type="Long" v="true" am="PRIVATE" name="id" jbt="false" id="_1569902370884333">
-                <jpa:generated-value strategy="DEFAULT"/>
-            </jpa:id>
-        </jpa:attributes>
-    </jpa:entity>
-    <jpa:entity compositePrimaryKeyClass="VAGAPK" abs="false" class="VAGA" v="true" xre="false" m="false" rootElement="_15698961738561" id="_1569902377108395">
-        <jpa:attributes>
-            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="cargo" jbt="false" id="_1569902377257397"/>
-            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="areaSegmento" jbt="false" id="_1569902377362398"/>
-            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="descricao" jbt="false" id="_1569902377461399"/>
-            <jpa:one-to-many own="true" collection-type="java.util.List" connected-entity-id="_1569902359261237" v="true" am="PRIVATE" name="Reqs" jbt="false" id="_1569902377564400">
+            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="nomeBayer" jbt="false" id="_1569973662718770"/>
+            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="celular" jbt="false" id="_1569973663677776"/>
+            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="empresaAtual" jbt="false" id="_1569973644883704"/>
+            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="tituloEmpregoAtual" jbt="false" id="_1569973645030705"/>
+            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="telResidencial" jbt="false" id="_1569973645175706"/>
+            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="endereco" jbt="false" id="_1569973645325707"/>
+            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="cep" jbt="false" id="_1569973645472708"/>
+            <jpa:basic attribute-type="String" v="true" am="PRIVATE" name="cidade" jbt="false" id="_1569973645629709"/>
+            <jpa:basic attribute-type="br.com.applyer.v2.base.entity.Pais" v="true" am="PRIVATE" name="pais" jbt="false" id="_1569973646613716"/>
+            <jpa:basic attribute-type="java.util.List" v="true" am="PRIVATE" name="empregos" jbt="false" id="_1569973646613717"/>
+            <jpa:basic attribute-type="java.util.List" v="true" am="PRIVATE" name="formacoes" jbt="false" id="_1569973646718718"/>
+            <jpa:one-to-many own="true" collection-type="java.util.List" connected-entity-id="_1569973661456752" v="true" am="PRIVATE" name="Empregos" jbt="false" id="_1569973645777712">
                 <jpa:cascade/>
             </jpa:one-to-many>
-            <jpa:id attribute-type="Long" v="true" am="PRIVATE" name="id" jbt="false" id="_1569902377109396">
+            <jpa:one-to-many own="true" collection-type="java.util.List" connected-entity-id="_1569973661546760" v="true" am="PRIVATE" name="Formacoes" jbt="false" id="_1569973645982713">
+                <jpa:cascade/>
+            </jpa:one-to-many>
+            <jpa:one-to-many own="true" collection-type="java.util.List" connected-entity-id="_1569973661560762" v="true" am="PRIVATE" name="idiomas" jbt="false" id="_1569973646186714">
+                <jpa:cascade/>
+            </jpa:one-to-many>
+            <jpa:one-to-many own="true" collection-type="java.util.List" connected-entity-id="_1569973661530758" v="true" am="PRIVATE" name="vagasAplicadas" jbt="false" id="_1569973646395715">
+                <jpa:cascade/>
+            </jpa:one-to-many>
+            <jpa:one-to-one own="false" primaryKey="false" connected-entity-id="_1569973661479754" connected-attribute-id="_1569973644436699" v="true" am="PRIVATE" name="usuario" jbt="false" id="_1569973645776710">
+                <jpa:cascade/>
+            </jpa:one-to-one>
+            <jpa:one-to-one own="true" primaryKey="false" connected-entity-id="_1569973661431748" v="true" am="PRIVATE" name="Pais" jbt="false" id="_1569973645776711">
+                <jpa:cascade/>
+            </jpa:one-to-one>
+            <jpa:id attribute-type="Long" v="true" am="PRIVATE" name="id" jbt="false" id="_1569973661583765">
                 <jpa:generated-value strategy="DEFAULT"/>
             </jpa:id>
         </jpa:attributes>
+        <jpa:table name="APP_TB_PERFIL"/>
     </jpa:entity>
     <jpa:c/>
     <jpa:wsl>
         <jpa:ws n="Main" id="_15698961738562">
-            <i ref="_1569902373761361" x="476" y="748"/>
-            <i ref="_1569902370884332" x="716" y="1001"/>
-            <i ref="_1569902377108395" x="1173" y="748"/>
-            <i ref="_1569902362918265" x="32" y="32"/>
-            <i ref="_1569902346598172" x="716" y="327"/>
-            <i ref="_1569902359261237" x="981" y="327"/>
-            <i ref="_1569902366948299" x="476" y="32"/>
-            <i ref="_1569902380625429"/>
-            <i ref="_1569902352959197" x="263" y="327"/>
+            <i ref="_1569973661445750"/>
+            <i ref="_1569973661503756"/>
+            <i ref="_1569973661431748"/>
+            <i ref="_1569973661546760"/>
+            <i ref="_1569973661560762"/>
+            <i ref="_1569973661479754"/>
+            <i ref="_1569973661583764"/>
+            <i ref="_1569973661456752"/>
+            <i ref="_1569973661530758"/>
         </jpa:ws>
     </jpa:wsl>
 </jpa:entity-mappings>
