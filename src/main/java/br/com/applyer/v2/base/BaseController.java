@@ -18,7 +18,7 @@ public abstract class BaseController<Entity> {
 
     }
 
-    @DeleteMapping(value = "/{id}")
+    @DeleteMapping(path = "/{id}")
     @CrossOrigin
     public void deletar(@PathVariable(name = "id") long id) {
         ResponseEntity.ok(getService().deletar(id));
@@ -26,7 +26,7 @@ public abstract class BaseController<Entity> {
     }
 
 
-    @GetMapping(value = "/{id}")
+    @GetMapping(path = "/{id}")
     @CrossOrigin
     public ResponseEntity<Entity> buscar(@PathVariable(name = "id") long id) {
         Optional<Entity> entity = getService().buscaPeloId(id);
