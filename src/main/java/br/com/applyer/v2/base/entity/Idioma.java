@@ -22,7 +22,8 @@ public class Idioma {
     @Basic
     private String escrita;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "Id", insertable = true, updatable = true)
     private Pais Pais;
 
     public Long getId() {

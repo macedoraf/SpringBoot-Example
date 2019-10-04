@@ -16,8 +16,9 @@ public class VagaAplicacao {
     @Basic
     private String status;
 
-    @OneToOne
-    private Vaga VAGA;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "Id", insertable = true, updatable = true)
+    private Vaga vaga;
 
     public Long getId() {
         return id;
@@ -36,11 +37,11 @@ public class VagaAplicacao {
     }
 
     public Vaga getVAGA() {
-        return VAGA;
+        return vaga;
     }
 
     public void setVAGA(Vaga VAGA) {
-        this.VAGA = VAGA;
+        this.vaga = VAGA;
     }
 
 }
