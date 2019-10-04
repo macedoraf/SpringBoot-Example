@@ -18,10 +18,10 @@ public abstract class BaseController<Entity> {
 
     }
 
-    @PostMapping(path = "/deletar/{id}")
+    @RequestMapping(path = "/{idEntity}",method = RequestMethod.DELETE)
     @CrossOrigin
-    public void deletar(@PathVariable(name = "id") long id) {
-        ResponseEntity.ok(getService().deletar(id));
+    public void deletar(@PathVariable(name = "idEntity") long idEntity) {
+        ResponseEntity.ok(getService().deletar(idEntity));
 
     }
 
