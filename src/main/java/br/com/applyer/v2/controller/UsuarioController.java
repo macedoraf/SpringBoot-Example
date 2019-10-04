@@ -10,7 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping(name = "v3/usuario")
+@RequestMapping(name = "/v3/usuario")
 public class UsuarioController extends BaseController<Usuario> {
 
     @Autowired
