@@ -42,7 +42,7 @@ public class Perfil {
     @OneToOne(mappedBy = "perfil")
     private Usuario usuario;
 
-    @OneToOne(cascade = CascadeType.REMOVE)
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "Id", insertable = true, updatable = true)
     private Pais Pais;
 
