@@ -22,7 +22,7 @@ public class Idioma {
     @Basic
     private String escrita;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.REMOVE)
     @JoinColumn(name = "Id", insertable = true, updatable = true)
     private Pais Pais;
 

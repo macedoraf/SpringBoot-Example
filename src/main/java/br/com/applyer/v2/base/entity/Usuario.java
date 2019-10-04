@@ -25,7 +25,8 @@ public class Usuario {
     @Basic
     private String sobrenome;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.REMOVE)
+    @JoinColumn(name = "Id", insertable = true, updatable = true)
     private Perfil perfil;
 
     public Long getId() {
