@@ -25,7 +25,8 @@ public class Formacao {
     @Basic
     private String media;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.REMOVE)
+    @JoinColumn(name = "Id", insertable = true, updatable = true)
     private Pais Pais;
 
     public Long getId() {
