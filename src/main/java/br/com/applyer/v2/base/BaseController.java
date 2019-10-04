@@ -20,8 +20,14 @@ public abstract class BaseController<Entity> {
 
     @RequestMapping(path = "/{idEntity}",method = RequestMethod.DELETE)
     @CrossOrigin
-    public void deletar(@PathVariable(name = "idEntity") long idEntity) {
-        ResponseEntity.ok(getService().deletar(idEntity));
+    public ResponseEntity<String> deletar(@PathVariable(name = "idEntity") long idEntity) {
+        boolean deletar = getService().deletar(idEntity);
+        if(deletar){
+            return ResponseEntity.ok("Deletado com Sucesso");
+        }else{
+            return ResponseEntity.ok("Não foi possível realizar o delete");
+        }
+
 
     }
 
