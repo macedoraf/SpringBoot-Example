@@ -24,7 +24,10 @@ public class Vaga {
     @Basic
     private String descricao;
 
-    @OneToMany
+    @ManyToMany
+    @JoinTable(name="vaga_requisito", joinColumns=
+            {@JoinColumn(name="vaga_id")}, inverseJoinColumns=
+            {@JoinColumn(name="req_id")})
     private List<Req> Reqs;
 
     public Long getId() {
