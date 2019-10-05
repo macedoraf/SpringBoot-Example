@@ -23,7 +23,7 @@ public class Vaga {
 
     @Basic
     private String descricao;
-    
+
     @OneToMany
     private List<Req> Reqs;
 
