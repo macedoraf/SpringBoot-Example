@@ -23,8 +23,7 @@ public class Vaga {
 
     @Basic
     private String descricao;
-
-    @JoinColumn(name="id", nullable = true)
+    
     @OneToMany
     private List<Req> Reqs;
 
