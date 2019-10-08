@@ -31,8 +31,12 @@ public abstract class BaseService<Entity> implements BaseServiceContract<Entity>
     @Override
     public boolean deletar(long id) {
         Optional<Entity> entity = buscaPeloId(id);
-        entity.ifPresent(value -> getRepository().delete(value));
-        return true;
+        if(entity.isPresent()){
+            getRepository().delete(entity.get());
+            return true;
+        }else{
+            return false;
+        }
 
     }
 

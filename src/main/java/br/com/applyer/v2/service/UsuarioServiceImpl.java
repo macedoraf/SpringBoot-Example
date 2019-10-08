@@ -17,4 +17,41 @@ public class UsuarioServiceImpl extends BaseService<Usuario> implements UsuarioS
     public CrudRepository<Usuario, Long> getRepository() {
         return repository;
     }
+
+
+    @Override
+    public Usuario authenticarUsuario(String email, String senha) {
+        Usuario usuario = new Usuario();
+        repository.findAll().forEach(
+                it ->{
+                    if(it.getEmail().equals(email) && it.getSenha().equals(senha)){
+                       usuario.setId(it.getId());
+                       usuario.setPerfil(it.getPerfil());
+                       usuario.setNome(it.getNome());
+                       usuario.setSobrenome(it.getSobrenome());
+                       usuario.setEmail(it.getEmail());
+                       usuario.setSenha(it.getSenha());
+                    }
+                }
+        );
+        return usuario;
+    }
+
+    @Override
+    public Boolean cadastrarUsuario(Usuario usuario) {
+        StringBuilder usuarioCadastradoString = new StringBuilder();
+        repository.findAll()
+                .forEach(
+                        it ->{
+                            if(it.getEmail().equals(usuario.getEmail()));{
+                                usuarioCadastradoString.append("Cadastrado");
+                            }
+                        }
+                );
+        if(!usuarioCadastradoString.toString().isEmpty()){
+            repository.save(usuario);
+        }
+
+        return !usuarioCadastradoString.toString().isEmpty();
+    }
 }

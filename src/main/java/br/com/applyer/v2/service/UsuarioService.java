@@ -6,4 +6,8 @@ import org.springframework.stereotype.Service;
 
 @Service
 public interface UsuarioService extends BaseServiceContract<Usuario> {
+
+    Usuario authenticarUsuario(String email, String senha);
+
+    Boolean cadastrarUsuario(Usuario usuario);
 }
