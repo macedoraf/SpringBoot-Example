@@ -48,10 +48,10 @@ public class UsuarioServiceImpl extends BaseService<Usuario> implements UsuarioS
                             }
                         }
                 );
-        if(!usuarioCadastradoString.toString().isEmpty()){
+        if(usuarioCadastradoString.toString().isEmpty()){
             repository.save(usuario);
         }
 
-        return !usuarioCadastradoString.toString().isEmpty();
+        return usuarioCadastradoString.toString().isEmpty();
     }
 }
