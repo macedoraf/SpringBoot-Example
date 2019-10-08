@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping(name = "/v3/auth")
+@RequestMapping("/v3/auth")
 public class UsuarioController extends BaseController<Usuario> {
 
     @Autowired
