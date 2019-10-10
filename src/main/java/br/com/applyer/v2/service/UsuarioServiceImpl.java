@@ -40,18 +40,7 @@ public class UsuarioServiceImpl extends BaseService<Usuario> implements UsuarioS
     @Override
     public Boolean cadastrarUsuario(Usuario usuario) {
         StringBuilder usuarioCadastradoString = new StringBuilder();
-        repository.findAll()
-                .forEach(
-                        it ->{
-                            if(it.getEmail().equals(usuario.getEmail()));{
-                                usuarioCadastradoString.append("Cadastrado");
-                            }
-                        }
-                );
-        if(usuarioCadastradoString.toString().isEmpty()){
-            repository.save(usuario);
-        }
-
+        repository.save(usuario);
         return usuarioCadastradoString.toString().isEmpty();
     }
 }
